@@ -1,0 +1,7 @@
+/home/jackson/Workspace/SpringBootJWTDocker2/src/main/java/com/jip/model/AuthenticationRequest.java
+/home/jackson/Workspace/SpringBootJWTDocker2/src/main/java/com/jip/controller/HelloController.java
+/home/jackson/Workspace/SpringBootJWTDocker2/src/main/java/com/jip/util/AuthenticationFilter.java
+/home/jackson/Workspace/SpringBootJWTDocker2/src/main/java/com/jip/util/JwtUtil.java
+/home/jackson/Workspace/SpringBootJWTDocker2/src/main/java/com/jip/config/SecurityConfigurer.java
+/home/jackson/Workspace/SpringBootJWTDocker2/src/main/java/com/jip/SpringBootJwtDocker2Application.java
+/home/jackson/Workspace/SpringBootJWTDocker2/src/main/java/com/jip/service/MyUserDetailsService.java

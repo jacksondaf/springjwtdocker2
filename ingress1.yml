@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: springjwtdocker1-ingress
+spec:
+  rules:
+    - host: helloworld.info
+      http:
+        paths: 
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: springjwtdocker1-svc
+                port:
+                  number: 8080 

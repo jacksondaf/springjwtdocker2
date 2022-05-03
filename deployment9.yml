@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: springjwtdocker1-configmap
+data:
+  WELCOME_MESSAGE1 : "Jackson 12345"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springjwtdocker1
+  labels:
+    app: springjwtdocker1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springjwtdocker1
+  template:
+    metadata:
+      labels:
+        app: springjwtdocker1
+    spec:
+      containers:
+        - name: myspringjwtdocker1
+          image: jacksondaf/springjwtdocker1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: welcome.message
+              valueFrom:
+                configMapKeyRef:
+                  name: springjwtdocker1-configmap
+                  key: WELCOME_MESSAGE1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springjwtdocker1-svc
+spec:
+  selector:
+    app: springjwtdocker1
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30080
+
+    
